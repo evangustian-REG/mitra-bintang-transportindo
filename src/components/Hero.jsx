@@ -79,6 +79,19 @@ export default function Hero({ lang, openQuoteModal }) {
               <span>{isId ? 'Jelajahi Armada & Layanan' : 'Explore Fleet & Services'}</span>
             </a>
           </div>
+          
+          <div className="flex justify-center lg:justify-start pt-3">
+            <a
+              href="/mitra-bintang-transportindo/Company_Profile_PT_Mitra_Bintang_Transportindo.pdf"
+              download="Company_Profile_PT_Mitra_Bintang_Transportindo.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-safety-400 transition-colors group"
+            >
+              <FileCheck2 className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              <span>{isId ? 'Unduh Profil Perusahaan (PDF)' : 'Download Company Profile (PDF)'}</span>
+            </a>
+          </div>
 
           {/* Trust Indicators / Stats */}
           <div className="pt-6 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-left">

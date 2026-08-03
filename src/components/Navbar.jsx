@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Globe, ShieldCheck, Menu, X, LayoutDashboard, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Globe, ShieldCheck, Menu, X, LayoutDashboard, Send, FileCheck2 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/companyData';
 
 export default function Navbar({ lang, setLang, openQuoteModal, openAdminModal }) {
@@ -111,6 +111,18 @@ export default function Navbar({ lang, setLang, openQuoteModal, openAdminModal }
 
           {/* Action Button */}
           <div className="hidden sm:flex items-center gap-3">
+            <a
+              href="/mitra-bintang-transportindo/Company_Profile_PT_Mitra_Bintang_Transportindo.pdf"
+              download="Company_Profile_PT_Mitra_Bintang_Transportindo.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-2.5 rounded-xl border border-white/10 text-slate-300 hover:text-white hover:bg-white/5 font-medium text-sm transition-all"
+              title={isId ? 'Unduh Profil Perusahaan' : 'Download Company Profile'}
+            >
+              <FileCheck2 className="w-4 h-4" />
+              <span className="hidden md:inline">Profile PDF</span>
+            </a>
+
             <button
               onClick={openQuoteModal}
               className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-safety-500 to-safety-600 text-navy-950 font-bold text-sm shadow-lg shadow-safety-500/25 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] transition-all"

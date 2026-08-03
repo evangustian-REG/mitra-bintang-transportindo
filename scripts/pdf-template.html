@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Company Profile - PT Mitra Bintang Transportindo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1e293b; /* slate-800 */
+      background-color: white;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Print styles */
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 20mm;
+      margin: 0 auto;
+      background: white;
+      box-sizing: border-box;
+      page-break-after: always;
+      position: relative;
+    }
+
+    .page:last-child {
+      page-break-after: avoid;
+    }
+    
+    .bg-brand-navy { background-color: #0B192C; }
+    .text-brand-navy { color: #0B192C; }
+    .bg-brand-gold { background-color: #F59E0B; }
+    .text-brand-gold { color: #F59E0B; }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: COVER -->
+  <div class="page bg-brand-navy text-white flex flex-col justify-center items-center text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+    
+    <div class="z-10 mt-[-50px]">
+      <div class="w-24 h-24 bg-brand-gold rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl">
+        <svg class="w-12 h-12 text-brand-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+      </div>
+      <h1 class="text-5xl font-black mb-4 tracking-tight">PT MITRA BINTANG<br/><span class="text-brand-gold">TRANSPORTINDO</span></h1>
+      <h2 class="text-xl font-medium text-slate-300 uppercase tracking-widest mb-12">Company Profile</h2>
+      
+      <p class="text-xl text-slate-200 italic font-light max-w-lg mx-auto">
+        "Mitra Logistik Anda, Kami Menggerakkan Kesuksesan Anda"
+      </p>
+    </div>
+    
+    <div class="absolute bottom-20 left-0 right-0 text-center z-10">
+      <p class="text-sm text-slate-400">Pusat Logistik B3 & Kargo Spesialis | Banjarmasin, Indonesia</p>
+    </div>
+  </div>
+
+  <!-- PAGE 2: ABOUT & CERTIFICATIONS -->
+  <div class="page flex flex-col">
+    <!-- Header -->
+    <div class="border-b-2 border-brand-gold pb-4 mb-8 flex justify-between items-end">
+      <div>
+        <h2 class="text-3xl font-bold text-brand-navy">Tentang Kami</h2>
+        <p class="text-slate-500 text-sm mt-1">Siapa Kami & Standar Kualitas</p>
+      </div>
+      <div class="text-right">
+        <span class="text-brand-gold font-bold text-xl">MBT Logistics</span>
+      </div>
+    </div>
+    
+    <!-- Content -->
+    <div class="flex-1">
+      <p class="text-lg text-slate-700 leading-relaxed mb-6 font-medium">
+        Berdiri sejak tahun 2012, PT Mitra Bintang Transportindo (MBT Logistics) adalah penyedia layanan Freight Forwarding spesialis pengangkutan Limbah B3, bahan kimia sensitif (Isotank Sodium Methylate & HCl), armada laut LCT/Tongkang/SPOB, serta distribusi proyek vital Gardu Induk PLN di seluruh wilayah Kalimantan dan Nusantara.
+      </p>
+      
+      <div class="grid grid-cols-2 gap-6 mt-10">
+        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+          <h3 class="text-xl font-bold text-brand-navy mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Sertifikasi & Kepatuhan
+          </h3>
+          <ul class="space-y-4">
+            <li>
+              <div class="font-bold text-slate-800">Izin Transportasi Limbah B3 KLHK</div>
+              <div class="text-sm text-slate-500">Kementerian Lingkungan Hidup dan Kehutanan RI (SK.B3/KLHK/2023-MBT)</div>
+            </li>
+            <li>
+              <div class="font-bold text-slate-800">Izin Penyelenggara Angkutan Barang B3</div>
+              <div class="text-sm text-slate-500">Kementerian Perhubungan (SK.KEMENHUB/B3/2024)</div>
+            </li>
+            <li>
+              <div class="font-bold text-slate-800">ISO 9001:2015</div>
+              <div class="text-sm text-slate-500">Sistem Manajemen Mutu Pelayanan Freight Forwarding</div>
+            </li>
+            <li>
+              <div class="font-bold text-slate-800">ISO 45001:2018 (K3 / HSE)</div>
+              <div class="text-sm text-slate-500">Sistem Manajemen Kesehatan dan Keselamatan Kerja</div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+          <h3 class="text-xl font-bold text-brand-navy mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            Protokol HSE (K3)
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex gap-3">
+              <span class="font-black text-slate-300 text-lg">01</span>
+              <div>
+                <div class="font-bold text-slate-800 text-sm">Pre-Trip Inspection</div>
+                <div class="text-xs text-slate-500">Inspeksi 32 poin kelayakan teknis armada sebelum beroperasi.</div>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-black text-slate-300 text-lg">02</span>
+              <div>
+                <div class="font-bold text-slate-800 text-sm">Certified Driver & APD</div>
+                <div class="text-xs text-slate-500">Sertifikat K3 B3 aktif & APD Hazmat Level 2/3 wajib.</div>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-black text-slate-300 text-lg">03</span>
+              <div>
+                <div class="font-bold text-slate-800 text-sm">Emergency Response</div>
+                <div class="text-xs text-slate-500">Dilengkapi Spill Kit & terhubung Tim ERT 24 Jam.</div>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-black text-slate-300 text-lg">04</span>
+              <div>
+                <div class="font-bold text-slate-800 text-sm">Real-time Telematics</div>
+                <div class="text-xs text-slate-500">Pembatasan kecepatan 60km/jam & pemantauan GPS 24/7.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- PAGE 3: SERVICES 1 -->
+  <div class="page flex flex-col">
+    <div class="border-b-2 border-brand-gold pb-4 mb-8 flex justify-between items-end">
+      <div>
+        <h2 class="text-3xl font-bold text-brand-navy">Layanan Utama</h2>
+        <p class="text-slate-500 text-sm mt-1">Divisi Transportasi & Kargo Spesialis</p>
+      </div>
+    </div>
+    
+    <div class="flex-1 space-y-8">
+      
+      <!-- B3 Section -->
+      <div>
+        <h3 class="text-2xl font-bold text-brand-navy mb-2">1. Transportasi Material B3 & Kimia</h3>
+        <p class="text-slate-600 mb-4 text-sm">Pengangkutan bahan kimia berbahaya & limbah B3 dengan armada berizin resmi, standar K3 ketat, dan unit Isotank/Container khusus.</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="border border-slate-200 p-4 rounded-lg">
+            <div class="font-bold text-brand-navy">Isotank B3 - Sodium Methylate</div>
+            <div class="text-xs font-semibold text-brand-gold mb-2">B3 Liquid - Hazardous (UN 1289)</div>
+            <ul class="text-xs text-slate-600 list-disc list-inside">
+              <li>Kapasitas: 24,000 - 26,000 L</li>
+              <li>Sertifikasi UN T11</li>
+              <li>Industri Biodiesel & Kimia</li>
+            </ul>
+          </div>
+          <div class="border border-slate-200 p-4 rounded-lg">
+            <div class="font-bold text-brand-navy">Isotank - Asam Klorida (HCl)</div>
+            <div class="text-xs font-semibold text-brand-gold mb-2">Corrosive Chemical (UN 1789)</div>
+            <ul class="text-xs text-slate-600 list-disc list-inside">
+              <li>Tangki berlapis karet anti-korosi</li>
+              <li>Kapasitas: 20,000 - 24,000 L</li>
+              <li>Safety Pressure Relief Valve</li>
+            </ul>
+          </div>
+          <div class="border border-slate-200 p-4 rounded-lg col-span-2">
+            <div class="font-bold text-brand-navy">Regular Container B3 - Sianida (Sodium Cyanide)</div>
+            <div class="text-xs font-semibold text-brand-gold mb-2">Toxic Solid - Mining Cargo (UN 1689)</div>
+            <p class="text-xs text-slate-600">Pengiriman material padat untuk tambang emas dengan protokol pengawalan K3 ekstra ketat, kontainer tertutup standar industri, opsi pengawalan bersenjata, dan GPS tracking.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Maritime Section -->
+      <div class="mt-8">
+        <h3 class="text-2xl font-bold text-brand-navy mb-2">2. Armada Laut & Tongkang</h3>
+        <p class="text-slate-600 mb-4 text-sm">Armada transportasi laut untuk wilayah sungai & pesisir Kalimantan serta antar-pulau di seluruh perairan Indonesia.</p>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="border border-slate-200 p-4 rounded-lg bg-slate-50">
+            <div class="font-bold text-brand-navy">LCT (Landing Craft Tank)</div>
+            <div class="text-xs text-slate-600 mt-1">Kapal LCT serbaguna untuk mobilisasi alat berat dan truk Isotank B3 ke area perairan dangkal & remote site (500 - 2,000 DWT).</div>
+          </div>
+          <div class="border border-slate-200 p-4 rounded-lg bg-slate-50">
+            <div class="font-bold text-brand-navy">Tongkang (Cargo Barges)</div>
+            <div class="text-xs text-slate-600 mt-1">Pengangkutan kargo curah, container B3, serta alat konstruksi kapasitas besar lintas pulau (Ukuran 180ft - 300ft).</div>
+          </div>
+          <div class="border border-slate-200 p-4 rounded-lg bg-slate-50">
+            <div class="font-bold text-brand-navy">SPOB (Oil Barge)</div>
+            <div class="text-xs text-slate-600 mt-1">Pengangkutan bahan bakar cair dengan sistem hull ganda (1,000 - 3,500 KL). Tersertifikasi PERTAMINA & Marine Class.</div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- PAGE 4: SERVICES 2 & CONTACT -->
+  <div class="page flex flex-col">
+    <div class="border-b-2 border-brand-gold pb-4 mb-8 flex justify-between items-end">
+      <div>
+        <h2 class="text-3xl font-bold text-brand-navy">Layanan Lanjutan & Kontak</h2>
+      </div>
+    </div>
+    
+    <div class="flex-1 space-y-8">
+      
+      <!-- Reguler Section -->
+      <div>
+        <h3 class="text-2xl font-bold text-brand-navy mb-2">3. Kargo Reguler & Spesialis</h3>
+        <p class="text-slate-600 mb-4 text-sm">Layanan kontainer standar dan kontainer cair fleksibel (Flexi Bag) untuk produk minyak sawit (CPO), bahan makanan, dan kimia non-B3.</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="border border-slate-200 p-4 rounded-lg">
+            <div class="font-bold text-brand-navy text-sm">Flexi Bag Container Logistics</div>
+            <p class="text-xs text-slate-600 mt-1">Solusi cairan non-B3 ekonomis (CPO, Palm Olein). Kapasitas 16k-24k Liter (Food Grade Polyethylene).</p>
+          </div>
+          <div class="border border-slate-200 p-4 rounded-lg">
+            <div class="font-bold text-brand-navy text-sm">Regular Dry Container</div>
+            <p class="text-xs text-slate-600 mt-1">Layanan pengiriman 20ft & 40ft (GP/HC) Door-to-Door & Port-to-Port intermodal lengkap.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- PLN & Warehouse -->
+      <div class="grid grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">4. Distribusi Proyek PLN</h3>
+          <div class="bg-slate-50 border border-slate-200 p-4 rounded-lg h-full">
+            <p class="text-xs text-slate-600">Spesialisasi pengiriman komponen kelistrikan berat, Trafo daya, jaringan kabel, dan perlengkapan Gardu Induk (GI) PLN di wilayah Kalimantan. Termasuk layanan Heavy Haulage Lowbed Trailer, rigging di site, dan pengawalan operasi.</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">5. Fasilitas Warehouse</h3>
+          <div class="bg-slate-50 border border-slate-200 p-4 rounded-lg h-full">
+            <p class="text-xs text-slate-600">Fasilitas pergudangan 15,000 m² (tertutup & terbuka) di Banjarmasin dengan penanganan Jumbo Bags, pemisahan zona material B3, Forklift 10T, Overhead Crane 25T, serta pengamanan CCTV 24/7.</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Footer / Contact Info -->
+    <div class="bg-brand-navy text-white rounded-xl p-6 mt-auto">
+      <h3 class="text-xl font-bold mb-4 text-brand-gold">Hubungi Kami</h3>
+      <div class="grid grid-cols-2 gap-4 text-sm">
+        <div>
+          <div class="text-slate-400 mb-1">Kantor Pusat</div>
+          <div class="font-medium">Jl. Sutoyo S komplek Ar Rahman No.50<br/>Banjarmasin 70118, Kalimantan Selatan</div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex gap-2">
+            <div class="text-slate-400 w-20">Telepon:</div>
+            <div class="font-medium">+62 511 8765 4321</div>
+          </div>
+          <div class="flex gap-2">
+            <div class="text-slate-400 w-20">WhatsApp:</div>
+            <div class="font-medium">+62 812 5555 9876</div>
+          </div>
+          <div class="flex gap-2">
+            <div class="text-slate-400 w-20">Email:</div>
+            <div class="font-medium">info@mitrabintangtransportindo.co.id</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
