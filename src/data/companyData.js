@@ -64,7 +64,7 @@ export const SERVICE_CATEGORIES = [
         id: "isotank-sodium-methylate",
         name: "Isotank Container B3 - Sodium Methylate",
         tag: "B3 Liquid - Hazardous",
-        image: "/images/isotank-b3-sodium-methylate.jpeg",
+        image: "./images/isotank-b3-sodium-methylate.jpeg",
         specs: ["Capacity: 24,000 - 26,000 Liters", "Material: Stainless Steel 316L / T11 UN Portable Tank", "UN Code: UN 1289 (Corrosive & Flammable)", "Certified Leak Proof & Thermal Insulation"],
         descId: "Penanganan dan pengangkutan bahan kimia Sodium Methylate Solution khusus industri biodiesel dan kimia dengan sertifikasi UN T11.",
         descEn: "Handling and transportation of Sodium Methylate Solution for biodiesel & chemical industries under UN T11 standard."
@@ -73,7 +73,7 @@ export const SERVICE_CATEGORIES = [
         id: "isotank-hcl",
         name: "Isotank Container - Asam Klorida (HCl)",
         tag: "Corrosive Chemical",
-        image: "/images/isotank-b3-sodium-methylate.jpeg",
+        image: "./images/isotank-b3-sodium-methylate.jpeg",
         specs: ["Rubber-lined / Composite Lined Tank", "Cap: 20,000 - 24,000 L", "UN 1789 Hazard Class 8", "Top & Bottom Valves with Safety Pressure Relief"],
         descId: "Transportasi cairan asam keras (HCl) menggunakan tangki berlapisan karet anti-korosi khusus standar pabrik manufaktur.",
         descEn: "Hydrochloric acid (HCl) transport utilizing rubber-lined anti-corrosion tank containers."
@@ -82,7 +82,7 @@ export const SERVICE_CATEGORIES = [
         id: "container-cyanide",
         name: "Regular Container B3 - Sianida (Sodium Cyanide)",
         tag: "Toxic Solid - Mining Cargo",
-        image: "/images/warehouse-jumbo-bags.jpeg",
+        image: "./images/warehouse-jumbo-bags.jpeg",
         specs: ["Sealed Heavy Duty Container 20ft / 40ft", "UN 1689 Class 6.1 Toxic Solid", "Spill Kit & Secondary Containment Included", "GPS Tracking & Armed Guard Escort Option"],
         descId: "Pengiriman material Sianida padat untuk kebutuhan pengolahan tambang emas dengan protokol pengawalan K3 ekstra ketat.",
         descEn: "Transport of solid Sodium Cyanide for mining operations under strict security protocols."
@@ -138,7 +138,7 @@ export const SERVICE_CATEGORIES = [
         id: "flexibag-container",
         name: "Flexi Bag Container Logistics",
         tag: "Non-Hazardous Liquid Solution",
-        image: "/images/flexibag-liquid-container.jpeg",
+        image: "./images/flexibag-liquid-container.jpeg",
         specs: ["Cap: 16,000 - 24,000 Liters in 20ft Dry Box", "Food Grade Polyethylene (FDA Compliant)", "Single-use hygienic liner prevents contamination", "Heating pad option for high-viscosity oils"],
         descId: "Solusi ekonomis pengiriman cairan non-B3 seperti CPO, Palm Olein, dan bahan baku cair industri menggunakan wadah Flexibag dalam kontainer 20ft.",
         descEn: "Cost-effective liquid cargo transport solution inside 20ft dry containers using FDA-approved flexibags."
@@ -156,7 +156,7 @@ export const SERVICE_CATEGORIES = [
         id: "isotank-general",
         name: "Isotank Container (General Chemical)",
         tag: "General Liquid Cargo",
-        image: "/images/isotank-b3-sodium-methylate.jpeg",
+        image: "./images/isotank-b3-sodium-methylate.jpeg",
         specs: ["Cap: 21,000 - 26,000 L", "Suitable for Solvents, Glycols, Resins", "Baffle plates to reduce liquid surge during transport"],
         descId: "Wadah Isotank serbaguna untuk berbagai cairan kimia non-korosif dan pelarut industri.",
         descEn: "Multi-purpose ISO tank containers designed for non-corrosive chemicals and solvents."
@@ -194,7 +194,7 @@ export const SERVICE_CATEGORIES = [
         id: "warehouse-storage",
         name: "Warehouse & Material Distribution Center",
         tag: "Storage & Handling",
-        image: "/images/warehouse-jumbo-bags.jpeg",
+        image: "./images/warehouse-jumbo-bags.jpeg",
         specs: ["Total Area: 15,000 m² (Covered & Open Yard)", "Dedicated Hazardous B3 Isolated Zone", "Forklift 3T - 10T & Overhead Crane 25T", "24/7 CCTV & Security Patrol"],
         descId: "Fasilitas gudang strategis di Banjarmasin untuk penyimpanan kargo karungan (Jumbo Bag), kontainer, dan konsolidasi kargo industri.",
         descEn: "Strategic warehouse center in Banjarmasin for jumbo bag materials, B3 segregation, and cargo consolidation."

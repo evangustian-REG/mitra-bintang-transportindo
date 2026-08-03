@@ -103,7 +103,7 @@ export default function Hero({ lang, openQuoteModal }) {
           <div className="glass-panel p-3 rounded-2xl border border-white/15 shadow-2xl relative group overflow-hidden">
             <div className="relative h-[320px] sm:h-[380px] rounded-xl overflow-hidden">
               <img
-                src="/images/isotank-b3-sodium-methylate.jpeg"
+                src="./images/isotank-b3-sodium-methylate.jpeg"
                 alt="PT Mitra Bintang Transportindo Isotank Container B3 Sodium Methylate"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
@@ -133,7 +133,7 @@ export default function Hero({ lang, openQuoteModal }) {
           {/* Floating Secondary Card 1 - Flexibag Container */}
           <div className="hidden sm:flex items-center gap-3 absolute -bottom-6 -left-6 p-3.5 rounded-xl glass-panel border border-safety-500/30 shadow-xl max-w-xs animate-float">
             <img
-              src="/images/flexibag-liquid-container.jpeg"
+              src="./images/flexibag-liquid-container.jpeg"
               alt="Flexibag Liquid Transport"
               className="w-14 h-14 rounded-lg object-cover border border-white/10"
             />
