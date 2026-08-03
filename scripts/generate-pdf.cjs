@@ -18,8 +18,11 @@ async function generatePDF() {
 
     const page = await browser.newPage();
 
-    // Set the HTML content
-    await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
+    const { pathToFileURL } = require('url');
+    const fileUrl = pathToFileURL(templatePath).href;
+
+    // Load the HTML file via file:// URL so relative paths (like images) work
+    await page.goto(fileUrl, { waitUntil: 'networkidle0' });
 
     // Ensure the public directory exists
     const publicDir = path.join(__dirname, '..', 'public');
