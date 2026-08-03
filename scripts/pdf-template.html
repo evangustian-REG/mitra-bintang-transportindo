@@ -4,13 +4,33 @@
   <meta charset="UTF-8">
   <title>Company Profile - PT Mitra Bintang Transportindo</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              900: '#0f172a',
+              950: '#0b1120',
+            },
+            safety: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
     
     body {
       font-family: 'Inter', sans-serif;
-      color: #1e293b; /* slate-800 */
-      background-color: white;
+      background-color: #0b1120;
+      color: #f8fafc;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
     
     h1, h2, h3, h4, h5, h6 {
@@ -25,272 +45,320 @@
 
     .page {
       width: 210mm;
-      min-height: 297mm;
+      height: 297mm; /* Strictly A4 height */
       padding: 20mm;
       margin: 0 auto;
-      background: white;
+      background: #0b1120;
       box-sizing: border-box;
       page-break-after: always;
       position: relative;
+      overflow: hidden; /* Prevent spillover */
     }
 
     .page:last-child {
       page-break-after: avoid;
     }
     
-    .bg-brand-navy { background-color: #0B192C; }
-    .text-brand-navy { color: #0B192C; }
-    .bg-brand-gold { background-color: #F59E0B; }
-    .text-brand-gold { color: #F59E0B; }
+    /* Utility for glassy cards */
+    .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Grid Background Pattern */
+    .bg-grid-pattern {
+      background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
   </style>
 </head>
 <body>
 
   <!-- PAGE 1: COVER -->
-  <div class="page bg-brand-navy text-white flex flex-col justify-center items-center text-center relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-      </svg>
+  <div class="page flex flex-col justify-center items-center text-center relative bg-grid-pattern">
+    <!-- Glowing Orbs -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+      <div class="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full bg-safety-500/20 blur-[120px]"></div>
+      <div class="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-blue-600/20 blur-[100px]"></div>
     </div>
     
-    <div class="z-10 mt-[-50px]">
-      <div class="w-24 h-24 bg-brand-gold rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl">
-        <svg class="w-12 h-12 text-brand-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+    <div class="z-10 w-full max-w-2xl">
+      <!-- Star Logo -->
+      <div class="w-28 h-28 bg-gradient-to-br from-safety-400 via-safety-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-10 shadow-[0_0_40px_rgba(245,158,11,0.4)] transform rotate-3">
+        <svg class="w-16 h-16 text-navy-950 font-bold fill-current -rotate-3" viewBox="0 0 24 24">
+          <path d="M12 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" />
+        </svg>
       </div>
-      <h1 class="text-5xl font-black mb-4 tracking-tight">PT MITRA BINTANG<br/><span class="text-brand-gold">TRANSPORTINDO</span></h1>
-      <h2 class="text-xl font-medium text-slate-300 uppercase tracking-widest mb-12">Company Profile</h2>
       
-      <p class="text-xl text-slate-200 italic font-light max-w-lg mx-auto">
-        "Mitra Logistik Anda, Kami Menggerakkan Kesuksesan Anda"
-      </p>
+      <h1 class="text-6xl font-black mb-6 tracking-tighter leading-none">
+        MITRA BINTANG<br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-safety-400 to-amber-500">TRANSPORTINDO</span>
+      </h1>
+      
+      <div class="w-32 h-1.5 bg-safety-500 mx-auto mb-8 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.6)]"></div>
+      
+      <h2 class="text-2xl font-bold text-slate-300 uppercase tracking-[0.2em] mb-12">Company Profile</h2>
+      
+      <div class="glass-card p-6 rounded-2xl inline-block">
+        <p class="text-xl text-slate-200 italic font-light">
+          "Mitra Logistik Anda, Kami Menggerakkan Kesuksesan Anda"
+        </p>
+      </div>
     </div>
     
-    <div class="absolute bottom-20 left-0 right-0 text-center z-10">
-      <p class="text-sm text-slate-400">Pusat Logistik B3 & Kargo Spesialis | Banjarmasin, Indonesia</p>
+    <div class="absolute bottom-16 left-0 right-0 text-center z-10 border-t border-white/10 pt-6 w-[80%] mx-auto">
+      <p class="text-sm text-slate-400 font-semibold tracking-wide">PUSAT LOGISTIK B3 & KARGO SPESIALIS | BANJARMASIN, INDONESIA</p>
     </div>
   </div>
 
   <!-- PAGE 2: ABOUT & CERTIFICATIONS -->
-  <div class="page flex flex-col">
+  <div class="page flex flex-col relative">
+    <div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-safety-500/10 blur-[100px] z-0"></div>
+    
     <!-- Header -->
-    <div class="border-b-2 border-brand-gold pb-4 mb-8 flex justify-between items-end">
+    <div class="border-b border-white/20 pb-4 mb-10 flex justify-between items-end z-10">
       <div>
-        <h2 class="text-3xl font-bold text-brand-navy">Tentang Kami</h2>
-        <p class="text-slate-500 text-sm mt-1">Siapa Kami & Standar Kualitas</p>
+        <h2 class="text-4xl font-black text-white tracking-tight">Tentang Kami</h2>
+        <p class="text-safety-400 text-lg mt-1 font-medium">Spesialisasi & Standar Kualitas</p>
       </div>
       <div class="text-right">
-        <span class="text-brand-gold font-bold text-xl">MBT Logistics</span>
+        <span class="text-slate-500 font-bold text-xl uppercase tracking-widest">MBT Logistics</span>
       </div>
     </div>
     
     <!-- Content -->
-    <div class="flex-1">
-      <p class="text-lg text-slate-700 leading-relaxed mb-6 font-medium">
-        Berdiri sejak tahun 2012, PT Mitra Bintang Transportindo (MBT Logistics) adalah penyedia layanan Freight Forwarding spesialis pengangkutan Limbah B3, bahan kimia sensitif (Isotank Sodium Methylate & HCl), armada laut LCT/Tongkang/SPOB, serta distribusi proyek vital Gardu Induk PLN di seluruh wilayah Kalimantan dan Nusantara.
+    <div class="flex-1 z-10">
+      <p class="text-lg text-slate-300 leading-relaxed mb-10 font-medium bg-white/5 p-6 rounded-2xl border border-white/10 shadow-lg">
+        Berdiri sejak tahun 2012, <span class="text-white font-bold">PT Mitra Bintang Transportindo (MBT Logistics)</span> adalah penyedia layanan Freight Forwarding spesialis pengangkutan Limbah B3, bahan kimia sensitif (Isotank Sodium Methylate & HCl), armada laut LCT/Tongkang, serta distribusi proyek vital Gardu Induk PLN di seluruh wilayah Nusantara.
       </p>
       
-      <div class="grid grid-cols-2 gap-6 mt-10">
-        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
-          <h3 class="text-xl font-bold text-brand-navy mb-4 flex items-center gap-2">
-            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            Sertifikasi & Kepatuhan
+      <div class="grid grid-cols-2 gap-8 mt-4">
+        <!-- Certifications -->
+        <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-safety-500/10 rounded-bl-full -mr-10 -mt-10"></div>
+          <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <svg class="w-8 h-8 text-safety-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Izin & Kepatuhan
           </h3>
-          <ul class="space-y-4">
-            <li>
-              <div class="font-bold text-slate-800">Izin Transportasi Limbah B3 KLHK</div>
-              <div class="text-sm text-slate-500">Kementerian Lingkungan Hidup dan Kehutanan RI (SK.B3/KLHK/2023-MBT)</div>
+          <ul class="space-y-6">
+            <li class="flex flex-col border-l-2 border-safety-500 pl-4">
+              <span class="font-bold text-white text-lg">Izin Transportasi B3 KLHK</span>
+              <span class="text-sm text-slate-400 mt-1">Kementerian Lingkungan Hidup dan Kehutanan RI (SK.B3/KLHK/2023-MBT)</span>
             </li>
-            <li>
-              <div class="font-bold text-slate-800">Izin Penyelenggara Angkutan Barang B3</div>
-              <div class="text-sm text-slate-500">Kementerian Perhubungan (SK.KEMENHUB/B3/2024)</div>
+            <li class="flex flex-col border-l-2 border-safety-500 pl-4">
+              <span class="font-bold text-white text-lg">Izin Penyelenggara Angkutan B3</span>
+              <span class="text-sm text-slate-400 mt-1">Kementerian Perhubungan (SK.KEMENHUB/B3/2024)</span>
             </li>
-            <li>
-              <div class="font-bold text-slate-800">ISO 9001:2015</div>
-              <div class="text-sm text-slate-500">Sistem Manajemen Mutu Pelayanan Freight Forwarding</div>
+            <li class="flex flex-col border-l-2 border-ocean-400 pl-4">
+              <span class="font-bold text-white text-lg">ISO 9001:2015</span>
+              <span class="text-sm text-slate-400 mt-1">Sistem Manajemen Mutu Pelayanan Freight Forwarding</span>
             </li>
-            <li>
-              <div class="font-bold text-slate-800">ISO 45001:2018 (K3 / HSE)</div>
-              <div class="text-sm text-slate-500">Sistem Manajemen Kesehatan dan Keselamatan Kerja</div>
+            <li class="flex flex-col border-l-2 border-ocean-400 pl-4">
+              <span class="font-bold text-white text-lg">ISO 45001:2018 (HSE)</span>
+              <span class="text-sm text-slate-400 mt-1">Sistem Manajemen Kesehatan dan Keselamatan Kerja (K3)</span>
             </li>
           </ul>
         </div>
         
-        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
-          <h3 class="text-xl font-bold text-brand-navy mb-4 flex items-center gap-2">
-            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-            Protokol HSE (K3)
+        <!-- HSE Protocols -->
+        <div class="glass-card p-8 rounded-2xl relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-full -mr-10 -mt-10"></div>
+          <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <svg class="w-8 h-8 text-safety-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            Protokol HSE Ketat
           </h3>
-          <ul class="space-y-4">
-            <li class="flex gap-3">
-              <span class="font-black text-slate-300 text-lg">01</span>
+          <ul class="space-y-6">
+            <li class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center font-black text-safety-400 shrink-0">01</div>
               <div>
-                <div class="font-bold text-slate-800 text-sm">Pre-Trip Inspection</div>
-                <div class="text-xs text-slate-500">Inspeksi 32 poin kelayakan teknis armada sebelum beroperasi.</div>
+                <div class="font-bold text-white text-lg">Pre-Trip Inspection</div>
+                <div class="text-sm text-slate-400 mt-1">Inspeksi 32 poin kelayakan teknis armada sebelum beroperasi.</div>
               </div>
             </li>
-            <li class="flex gap-3">
-              <span class="font-black text-slate-300 text-lg">02</span>
+            <li class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center font-black text-safety-400 shrink-0">02</div>
               <div>
-                <div class="font-bold text-slate-800 text-sm">Certified Driver & APD</div>
-                <div class="text-xs text-slate-500">Sertifikat K3 B3 aktif & APD Hazmat Level 2/3 wajib.</div>
+                <div class="font-bold text-white text-lg">Certified Driver & APD</div>
+                <div class="text-sm text-slate-400 mt-1">Sertifikat K3 B3 aktif & penggunaan APD Hazmat Level 2/3 wajib.</div>
               </div>
             </li>
-            <li class="flex gap-3">
-              <span class="font-black text-slate-300 text-lg">03</span>
+            <li class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center font-black text-safety-400 shrink-0">03</div>
               <div>
-                <div class="font-bold text-slate-800 text-sm">Emergency Response</div>
-                <div class="text-xs text-slate-500">Dilengkapi Spill Kit & terhubung Tim ERT 24 Jam.</div>
+                <div class="font-bold text-white text-lg">Emergency Response</div>
+                <div class="text-sm text-slate-400 mt-1">Armada dilengkapi Spill Kit & terhubung Tim ERT 24 Jam.</div>
               </div>
             </li>
-            <li class="flex gap-3">
-              <span class="font-black text-slate-300 text-lg">04</span>
+            <li class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center font-black text-safety-400 shrink-0">04</div>
               <div>
-                <div class="font-bold text-slate-800 text-sm">Real-time Telematics</div>
-                <div class="text-xs text-slate-500">Pembatasan kecepatan 60km/jam & pemantauan GPS 24/7.</div>
+                <div class="font-bold text-white text-lg">Real-time Telematics</div>
+                <div class="text-sm text-slate-400 mt-1">Pembatasan kecepatan max 60km/jam & pemantauan GPS 24/7.</div>
               </div>
             </li>
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: SERVICES WITH IMAGES -->
+  <div class="page flex flex-col">
+    <div class="border-b border-white/20 pb-4 mb-8 flex justify-between items-end z-10">
+      <div>
+        <h2 class="text-4xl font-black text-white tracking-tight">Layanan Utama</h2>
+        <p class="text-safety-400 text-lg mt-1 font-medium">Divisi Transportasi Spesialis</p>
+      </div>
+    </div>
+    
+    <div class="flex-1 space-y-8 z-10">
+      
+      <!-- Transportasi B3 with Image -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 flex flex-col">
+        <div class="h-48 w-full relative">
+          <!-- We use the local image path -->
+          <img src="../public/images/isotank-b3-sodium-methylate.jpeg" alt="Isotank" class="w-full h-full object-cover opacity-80" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-950 to-transparent"></div>
+          <div class="absolute bottom-4 left-6">
+            <h3 class="text-2xl font-bold text-white drop-shadow-md">Transportasi Material B3</h3>
+            <div class="inline-block mt-2 px-3 py-1 rounded bg-safety-500/20 border border-safety-500/50 text-safety-400 text-xs font-bold uppercase tracking-wider">Hazardous (UN 1289)</div>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-slate-300 mb-6 text-sm leading-relaxed">Pengangkutan bahan kimia berbahaya & limbah B3 dengan armada berizin resmi, standar K3 ketat, dan unit Isotank khusus (Sodium Methylate, HCl, Sodium Cyanide).</p>
+          
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <div class="font-bold text-white text-lg mb-2 flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-safety-400"></div> Isotank B3
+              </div>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li>• Kapasitas: 24,000 - 26,000 L</li>
+                <li>• Sertifikasi Internasional UN T11</li>
+                <li>• Khusus Industri Biodiesel & Kimia</li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-bold text-white text-lg mb-2 flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-safety-400"></div> Container B3 (Padat)
+              </div>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li>• Spesialis Sianida (UN 1689)</li>
+                <li>• Pengawalan keamanan & K3 ekstra</li>
+                <li>• Pelacakan GPS End-to-End</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kargo Reguler & Flexibag with Image -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 flex flex-col mt-6">
+        <div class="h-40 w-full relative">
+          <img src="../public/images/flexibag-liquid-container.jpeg" alt="Flexibag" class="w-full h-full object-cover opacity-80" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-950 to-transparent"></div>
+          <div class="absolute bottom-4 left-6">
+            <h3 class="text-2xl font-bold text-white drop-shadow-md">Kargo Reguler & Flexi Bag</h3>
+          </div>
+        </div>
+        <div class="p-6 grid grid-cols-2 gap-8">
+          <div>
+            <div class="font-bold text-white text-lg mb-2 text-safety-400">Flexi Bag Container</div>
+            <p class="text-sm text-slate-400 leading-relaxed">Solusi cairan non-B3 ekonomis (CPO, Palm Olein). Kapasitas 16,000 - 24,000 Liter menggunakan material Food Grade Polyethylene yang aman dan teruji.</p>
+          </div>
+          <div>
+            <div class="font-bold text-white text-lg mb-2 text-safety-400">Regular Dry Container</div>
+            <p class="text-sm text-slate-400 leading-relaxed">Layanan pengiriman kargo umum menggunakan kontainer 20ft & 40ft (GP/HC). Melayani rute Door-to-Door & Port-to-Port intermodal secara lengkap.</p>
+          </div>
+        </div>
+      </div>
       
     </div>
   </div>
 
-  <!-- PAGE 3: SERVICES 1 -->
-  <div class="page flex flex-col">
-    <div class="border-b-2 border-brand-gold pb-4 mb-8 flex justify-between items-end">
-      <div>
-        <h2 class="text-3xl font-bold text-brand-navy">Layanan Utama</h2>
-        <p class="text-slate-500 text-sm mt-1">Divisi Transportasi & Kargo Spesialis</p>
-      </div>
-    </div>
-    
-    <div class="flex-1 space-y-8">
-      
-      <!-- B3 Section -->
-      <div>
-        <h3 class="text-2xl font-bold text-brand-navy mb-2">1. Transportasi Material B3 & Kimia</h3>
-        <p class="text-slate-600 mb-4 text-sm">Pengangkutan bahan kimia berbahaya & limbah B3 dengan armada berizin resmi, standar K3 ketat, dan unit Isotank/Container khusus.</p>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="border border-slate-200 p-4 rounded-lg">
-            <div class="font-bold text-brand-navy">Isotank B3 - Sodium Methylate</div>
-            <div class="text-xs font-semibold text-brand-gold mb-2">B3 Liquid - Hazardous (UN 1289)</div>
-            <ul class="text-xs text-slate-600 list-disc list-inside">
-              <li>Kapasitas: 24,000 - 26,000 L</li>
-              <li>Sertifikasi UN T11</li>
-              <li>Industri Biodiesel & Kimia</li>
-            </ul>
-          </div>
-          <div class="border border-slate-200 p-4 rounded-lg">
-            <div class="font-bold text-brand-navy">Isotank - Asam Klorida (HCl)</div>
-            <div class="text-xs font-semibold text-brand-gold mb-2">Corrosive Chemical (UN 1789)</div>
-            <ul class="text-xs text-slate-600 list-disc list-inside">
-              <li>Tangki berlapis karet anti-korosi</li>
-              <li>Kapasitas: 20,000 - 24,000 L</li>
-              <li>Safety Pressure Relief Valve</li>
-            </ul>
-          </div>
-          <div class="border border-slate-200 p-4 rounded-lg col-span-2">
-            <div class="font-bold text-brand-navy">Regular Container B3 - Sianida (Sodium Cyanide)</div>
-            <div class="text-xs font-semibold text-brand-gold mb-2">Toxic Solid - Mining Cargo (UN 1689)</div>
-            <p class="text-xs text-slate-600">Pengiriman material padat untuk tambang emas dengan protokol pengawalan K3 ekstra ketat, kontainer tertutup standar industri, opsi pengawalan bersenjata, dan GPS tracking.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Maritime Section -->
-      <div class="mt-8">
-        <h3 class="text-2xl font-bold text-brand-navy mb-2">2. Armada Laut & Tongkang</h3>
-        <p class="text-slate-600 mb-4 text-sm">Armada transportasi laut untuk wilayah sungai & pesisir Kalimantan serta antar-pulau di seluruh perairan Indonesia.</p>
-        <div class="grid grid-cols-3 gap-4">
-          <div class="border border-slate-200 p-4 rounded-lg bg-slate-50">
-            <div class="font-bold text-brand-navy">LCT (Landing Craft Tank)</div>
-            <div class="text-xs text-slate-600 mt-1">Kapal LCT serbaguna untuk mobilisasi alat berat dan truk Isotank B3 ke area perairan dangkal & remote site (500 - 2,000 DWT).</div>
-          </div>
-          <div class="border border-slate-200 p-4 rounded-lg bg-slate-50">
-            <div class="font-bold text-brand-navy">Tongkang (Cargo Barges)</div>
-            <div class="text-xs text-slate-600 mt-1">Pengangkutan kargo curah, container B3, serta alat konstruksi kapasitas besar lintas pulau (Ukuran 180ft - 300ft).</div>
-          </div>
-          <div class="border border-slate-200 p-4 rounded-lg bg-slate-50">
-            <div class="font-bold text-brand-navy">SPOB (Oil Barge)</div>
-            <div class="text-xs text-slate-600 mt-1">Pengangkutan bahan bakar cair dengan sistem hull ganda (1,000 - 3,500 KL). Tersertifikasi PERTAMINA & Marine Class.</div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+  <!-- PAGE 4: WAREHOUSE & CONTACT -->
+  <div class="page flex flex-col bg-grid-pattern">
+    <div class="absolute top-[20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/10 blur-[120px] z-0"></div>
 
-  <!-- PAGE 4: SERVICES 2 & CONTACT -->
-  <div class="page flex flex-col">
-    <div class="border-b-2 border-brand-gold pb-4 mb-8 flex justify-between items-end">
+    <div class="border-b border-white/20 pb-4 mb-8 flex justify-between items-end z-10">
       <div>
-        <h2 class="text-3xl font-bold text-brand-navy">Layanan Lanjutan & Kontak</h2>
+        <h2 class="text-4xl font-black text-white tracking-tight">Fasilitas & Proyek PLN</h2>
       </div>
     </div>
     
-    <div class="flex-1 space-y-8">
+    <div class="flex-1 space-y-8 z-10">
       
-      <!-- Reguler Section -->
-      <div>
-        <h3 class="text-2xl font-bold text-brand-navy mb-2">3. Kargo Reguler & Spesialis</h3>
-        <p class="text-slate-600 mb-4 text-sm">Layanan kontainer standar dan kontainer cair fleksibel (Flexi Bag) untuk produk minyak sawit (CPO), bahan makanan, dan kimia non-B3.</p>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="border border-slate-200 p-4 rounded-lg">
-            <div class="font-bold text-brand-navy text-sm">Flexi Bag Container Logistics</div>
-            <p class="text-xs text-slate-600 mt-1">Solusi cairan non-B3 ekonomis (CPO, Palm Olein). Kapasitas 16k-24k Liter (Food Grade Polyethylene).</p>
-          </div>
-          <div class="border border-slate-200 p-4 rounded-lg">
-            <div class="font-bold text-brand-navy text-sm">Regular Dry Container</div>
-            <p class="text-xs text-slate-600 mt-1">Layanan pengiriman 20ft & 40ft (GP/HC) Door-to-Door & Port-to-Port intermodal lengkap.</p>
-          </div>
+      <!-- Warehouse with Image -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 flex">
+        <div class="w-2/5 relative">
+          <img src="../public/images/warehouse-jumbo-bags.jpeg" alt="Warehouse" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent to-navy-950"></div>
+        </div>
+        <div class="w-3/5 p-8">
+          <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">Fasilitas Warehouse (Gudang)</h3>
+          <p class="text-slate-300 mb-6 text-sm leading-relaxed">
+            Pusat logistik terintegrasi dengan pengamanan maksimal untuk kargo reguler maupun sensitif.
+          </p>
+          <ul class="grid grid-cols-2 gap-4 text-sm text-slate-400">
+            <li class="flex items-start gap-2"><div class="text-safety-400 mt-0.5">✓</div> Area 15,000 m² (Tertutup & Terbuka)</li>
+            <li class="flex items-start gap-2"><div class="text-safety-400 mt-0.5">✓</div> Penanganan Jumbo Bags</li>
+            <li class="flex items-start gap-2"><div class="text-safety-400 mt-0.5">✓</div> Zona Khusus Pemisahan Material B3</li>
+            <li class="flex items-start gap-2"><div class="text-safety-400 mt-0.5">✓</div> Pengamanan CCTV 24/7</li>
+            <li class="flex items-start gap-2"><div class="text-safety-400 mt-0.5">✓</div> Forklift Kapasitas 10 Ton</li>
+            <li class="flex items-start gap-2"><div class="text-safety-400 mt-0.5">✓</div> Overhead Crane 25 Ton</li>
+          </ul>
         </div>
       </div>
-      
-      <!-- PLN & Warehouse -->
+
+      <!-- Armada Laut & PLN -->
       <div class="grid grid-cols-2 gap-6">
-        <div>
-          <h3 class="text-xl font-bold text-brand-navy mb-2">4. Distribusi Proyek PLN</h3>
-          <div class="bg-slate-50 border border-slate-200 p-4 rounded-lg h-full">
-            <p class="text-xs text-slate-600">Spesialisasi pengiriman komponen kelistrikan berat, Trafo daya, jaringan kabel, dan perlengkapan Gardu Induk (GI) PLN di wilayah Kalimantan. Termasuk layanan Heavy Haulage Lowbed Trailer, rigging di site, dan pengawalan operasi.</p>
+        <div class="glass-card p-6 rounded-2xl">
+          <h3 class="text-xl font-bold text-white mb-3 text-safety-400">Distribusi Proyek Kelistrikan (PLN)</h3>
+          <p class="text-sm text-slate-300 leading-relaxed mb-4">
+            Spesialisasi pengiriman komponen kelistrikan berat, Trafo daya, jaringan kabel, dan perlengkapan Gardu Induk (GI) PLN di wilayah Kalimantan.
+          </p>
+          <div class="inline-block px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-slate-200">
+            Heavy Haulage Lowbed • Rigging Site
           </div>
         </div>
-        <div>
-          <h3 class="text-xl font-bold text-brand-navy mb-2">5. Fasilitas Warehouse</h3>
-          <div class="bg-slate-50 border border-slate-200 p-4 rounded-lg h-full">
-            <p class="text-xs text-slate-600">Fasilitas pergudangan 15,000 m² (tertutup & terbuka) di Banjarmasin dengan penanganan Jumbo Bags, pemisahan zona material B3, Forklift 10T, Overhead Crane 25T, serta pengamanan CCTV 24/7.</p>
-          </div>
+        
+        <div class="glass-card p-6 rounded-2xl">
+          <h3 class="text-xl font-bold text-white mb-3 text-safety-400">Armada Laut & Tongkang</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Armada LCT (Landing Craft Tank) serbaguna untuk mobilisasi alat berat, Tongkang (Cargo Barges) curah, dan SPOB (Oil Barge) bersertifikat Pertamina.
+          </p>
         </div>
       </div>
       
     </div>
     
     <!-- Footer / Contact Info -->
-    <div class="bg-brand-navy text-white rounded-xl p-6 mt-auto">
-      <h3 class="text-xl font-bold mb-4 text-brand-gold">Hubungi Kami</h3>
-      <div class="grid grid-cols-2 gap-4 text-sm">
+    <div class="bg-gradient-to-r from-safety-500 to-amber-600 rounded-2xl p-8 mt-auto z-10 shadow-[0_10px_30px_rgba(245,158,11,0.3)] relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 opacity-20">
+        <svg class="w-48 h-48 text-navy-950 fill-current" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" /></svg>
+      </div>
+      
+      <h3 class="text-3xl font-black mb-6 text-navy-950">Hubungi Kami</h3>
+      <div class="grid grid-cols-2 gap-8 text-navy-900 font-medium">
         <div>
-          <div class="text-slate-400 mb-1">Kantor Pusat</div>
-          <div class="font-medium">Jl. Sutoyo S komplek Ar Rahman No.50<br/>Banjarmasin 70118, Kalimantan Selatan</div>
+          <div class="text-navy-950/70 font-bold mb-1 text-xs uppercase tracking-wider">Kantor Pusat</div>
+          <div class="text-lg">Jl. Sutoyo S komplek Ar Rahman No.50<br/>Banjarmasin 70118<br/>Kalimantan Selatan, Indonesia</div>
         </div>
-        <div class="space-y-2">
-          <div class="flex gap-2">
-            <div class="text-slate-400 w-20">Telepon:</div>
-            <div class="font-medium">+62 511 8765 4321</div>
+        <div class="space-y-4">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-navy-950/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-navy-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            </div>
+            <div class="text-xl font-bold">+62 511 8765 4321</div>
           </div>
-          <div class="flex gap-2">
-            <div class="text-slate-400 w-20">WhatsApp:</div>
-            <div class="font-medium">+62 812 5555 9876</div>
-          </div>
-          <div class="flex gap-2">
-            <div class="text-slate-400 w-20">Email:</div>
-            <div class="font-medium">info@mitrabintangtransportindo.co.id</div>
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-navy-950/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-navy-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <div class="text-base font-bold">info@mitrabintangtransportindo.co.id</div>
           </div>
         </div>
       </div>
