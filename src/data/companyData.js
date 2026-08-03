@@ -1,7 +1,6 @@
-import isotankImg from '../assets/images/isotank-b3-sodium-methylate.jpeg';
-import flexibagImg from '../assets/images/flexibag-liquid-container.jpeg';
-import warehouseImg from '../assets/images/warehouse-jumbo-bags.jpeg';
-
+const isotankImg = '/mitra-bintang-transportindo/images/isotank-b3-sodium-methylate.jpeg';
+const flexibagImg = '/mitra-bintang-transportindo/images/flexibag-liquid-container.jpeg';
+const warehouseImg = '/mitra-bintang-transportindo/images/warehouse-jumbo-bags.jpeg';
 export const COMPANY_INFO = {
   name: "PT Mitra Bintang Transportindo",
   shortName: "MBT Logistics",

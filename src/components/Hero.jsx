@@ -1,8 +1,8 @@
 import React from 'react';
 import { ShieldCheck, Truck, Anchor, Zap, ArrowRight, CheckCircle2, Award, FileCheck2 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/companyData';
-import isotankImg from '../assets/images/isotank-b3-sodium-methylate.jpeg';
-import flexibagImg from '../assets/images/flexibag-liquid-container.jpeg';
+const isotankImg = '/mitra-bintang-transportindo/images/isotank-b3-sodium-methylate.jpeg';
+const flexibagImg = '/mitra-bintang-transportindo/images/flexibag-liquid-container.jpeg';
 
 export default function Hero({ lang, openQuoteModal }) {
   const isId = lang === 'id';
